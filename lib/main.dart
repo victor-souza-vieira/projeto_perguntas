@@ -6,28 +6,47 @@ void main() => runApp(PerguntaApp());
 
 class _PerguntaAppState extends State<PerguntaApp> {
   var _perguntaSelecionada = 0;
-  void _responder() {
-    if (temPerguntaSelecionada) {
-      setState(() {
-        _perguntaSelecionada++;
-      });
-    }
-  }
+  var _pontuacaoTotal = 0;
 
   final _perguntas = const [
     {
       'texto': 'Qual é a sua cor favorita?',
-      'resposta': ['Azul', 'Vermelho', 'Verde', 'Rosa']
+      'resposta': [
+        {'texto': 'Azul', 'pontuacao': 10},
+        {'texto': 'Vermelho', 'pontuacao': 5},
+        {'texto': 'Verde', 'pontuacao': 3},
+        {'texto': 'Rosa', 'pontuacao': 1},
+      ]
     },
     {
       'texto': 'Qual seu animal favorito?',
-      'resposta': ['Cachorro', 'Gato', 'Papagaio', 'Tartaruga']
+      'resposta': [
+        {'texto': 'Cachorro', 'pontuacao': 10},
+        {'texto': 'Gato', 'pontuacao': 5},
+        {'texto': 'Papagaio', 'pontuacao': 3},
+        {'texto': 'Tartaruga', 'pontuacao': 1},
+      ]
     },
     {
       'texto': 'Qual seu filme favorito?',
-      'resposta': ['Vingadores', 'Guerra Civil', 'Homem-aranha', 'Django']
+      'resposta': [
+        {'texto': 'Vingadores', 'pontuacao': 10},
+        {'texto': 'Guerra Civil', 'pontuacao': 5},
+        {'texto': 'Homem-aranha', 'pontuacao': 3},
+        {'texto': 'Django', 'pontuacao': 1},
+      ]
     },
   ];
+
+  void _responder(int pontuacao) {
+    if (temPerguntaSelecionada) {
+      setState(() {
+        _perguntaSelecionada++;
+        _pontuacaoTotal += pontuacao;
+      });
+    }
+  }
+
   get temPerguntaSelecionada {
     return _perguntaSelecionada < _perguntas.length;
   }
@@ -44,9 +63,9 @@ class _PerguntaAppState extends State<PerguntaApp> {
             ? Questionario(
                 perguntaSelecionada: _perguntaSelecionada,
                 perguntas: _perguntas,
-                responder: _responder,
+                quantoResponder: _responder,
               )
-            : Resultado(),
+            : Resultado(_pontuacaoTotal),
       ),
     );
   }
