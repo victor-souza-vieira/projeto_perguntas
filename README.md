@@ -4,7 +4,7 @@ Projeto básico do curso da Cod3r;
 
 ## Getting Started
 
-Este projeto está sendo feito utilizando o framework Flutter + a Linguagem de programação Dart
+Este projeto está sendo feito utilizando o framework **Flutter** + a Linguagem de programação **Dart**
 
 ## Escopo do projeto
 
