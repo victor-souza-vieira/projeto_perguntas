@@ -1,16 +1,11 @@
 # Projeto perguntas
 
-A new Flutter project.
+Projeto básico do curso da Cod3r;
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Este projeto está sendo feito utilizando o framework Flutter + a Linguagem de programação Dart
 
-A few resources to get you started if this is your first Flutter project:
+## Escopo do projeto
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Aplicativo básico com algumas perguntas onde cada resposta gera uma pontuação e ao final é exibida uma mensagem personalizada de acordo com essa pontuação :star:
